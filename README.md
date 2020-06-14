@@ -8,7 +8,7 @@ Passo 1 : Download/Clone o código para uma pasta do seu computador;
 
 Passo 2 : Abra o Command Prompt (CMD): Abra a janela de pesquisa do windows, tecle (CMD) e em seguida clique no "Command Prompt" App;   
 
-Passo 3 : Acessar a pasta onde o arquivo com o código foi salvo e digitar cd TCC_Rafael_Santos_PUC
+Passo 3 : Acessar a pasta onde o arquivo com o código foi salvo (TCC_PUC-> Codes -> TCC_Rafael) e digitar cd TCC_Rafael_Santos_PUC
 
 Passo 4 : Digitar mvnw.cmd spring-boot:run
 
