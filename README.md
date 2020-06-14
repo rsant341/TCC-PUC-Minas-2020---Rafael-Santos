@@ -1,6 +1,6 @@
 # TCC-PUC-Minas-2020---Rafael-Santos
 
-Segue abaixo o passo a passo para 
+Segue abaixo o passo a passo para abrir e executar o código:
 
 Passo 1 : Clone ou Download Codigo
 
