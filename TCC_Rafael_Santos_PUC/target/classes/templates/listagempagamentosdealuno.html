@@ -1,0 +1,78 @@
+<!-- Documentação TCC HTML -->
+ 
+<!DOCTYPE html>
+<html lang="pt_br" xmlns:th="http://www.thymeleaf.org"> 
+
+	<head> 	    
+	    <meta charset="utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	    
+	    <!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    	<!-- Uso de Fontes -->
+		<script src="https://kit.fontawesome.com/59d868f5b6.js" crossorigin="anonymous"></script>		
+		
+		<link rel="stylesheet" href="cssestilos/estilos.css"/>
+		
+		
+		<title>GymControl</title> 
+		
+	</head>	
+
+	<body>
+		<div class="container-fluid">	
+			<div class="btn-toolbar justify-content-between">		
+				<!-- Container de Links da Barra de Navegação do HTML  -->	
+				<a  style="color:rgb(0,0,255);font-size:60px;"><h1><u>GymControl</u></h1></a>
+				<div class="btn-group mr-1" role="group" aria-label="First group">
+					<a href="/" class="btn btn-primary"  role="button"><i class="fas fa-home"></i> Inicio</a>					
+					<a href="/areaDaRecepcionista" class="btn btn-primary active"  role="button"><i class="fas fa-female"></i> Recepcionista</a>
+					<a href="/areaDoGerente" class="btn btn-primary active"  role="button"><i class="fas fa-user-tie"></i> Gerente</a>			
+					<a href="/" class="btn btn-secondary disabled"  role="button"><s><i class="fas fa-user-nurse"></i>Fisioterapeuta</s></a>
+					<a href="/" class="btn btn-secondary disabled"  role="button"><s><i class="fas fa-user"></i>Aluno</s></a>				
+				</div>
+			</div>	
+					
+			<br>
+			
+			<div class="btn-toolbar justify-content-between">		
+				<a><i class="text-center fas fa-dumbbell fa-4x" style="color:rgb(0,0,255);"></i></a>
+				<div class="btn-group mr-1" role="group" aria-label="First group">
+					<a href="/listaDeAlunosMatriculados" class="btn btn-primary"  role="button"><i class="fas fa-list"></i> Relatório de Matriculas</a>
+				    <a href="/listaStatusPagamentoDosAlunos" class="btn btn-primary"  role="button"><i class="fas fa-hand-holding-usd"></i> Relatório de Pagamentos</a>							
+				</div>
+			</div>		
+			
+			<br>
+						
+			<h4><a>Lista de Pagamentos do Aluno(a) : </a><b><a th:text="${alunoX.nome}"></a></b></h4>
+			
+			<br>
+			
+			
+			<table class="table table-striped">
+				<thead class="thead-blue">
+					<tr>
+						<th class="text-center">Data de Vencimento</th>
+						<th class="text-center">Data de Pagamento</th>
+						<th class="text-center">Status</th>						
+					</tr>
+				</thead>
+				<tbody>
+						<tr	th:each="alunoX: ${alunoX.getListaPagamentos()}">
+								<td class="text-center" th:text="${#strings.toUpperCase(#dates.format(alunoX.dataVencimento, 'dd.MMM.yyyy HH:mm'))}">Data de Vencimento</td>
+								<td class="text-center" th:text="${#strings.toUpperCase(#dates.format(alunoX.dataPagamento, 'dd.MMM.yyyy HH:mm'))}">Data da Pagamento</td>
+								<td class="text-center" th:text="${alunoX.faturaEstaPaga()}">Status</td>		
+						</tr>	
+				</tbody>
+			</table>	
+			
+			<br><br><br>
+			
+			<footer>
+	           	<p class="text-muted">TCC Rafael Santos 2020 - PUC MINAS Virtual</p>
+			</footer> 
+		</div>
+	</body> 
+</html> 

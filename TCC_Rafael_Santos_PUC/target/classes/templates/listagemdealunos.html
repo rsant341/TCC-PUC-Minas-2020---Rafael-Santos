@@ -1,0 +1,86 @@
+<!--  Documentação TCC HTML  -->
+ 
+<!DOCTYPE html>
+<html lang="pt_br" xmlns:th="http://www.thymeleaf.org"> 
+
+	<head> 	    
+	    <meta charset="utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	    
+	    <!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    	<!-- Uso de Fontes -->
+		<script src="https://kit.fontawesome.com/59d868f5b6.js" crossorigin="anonymous"></script>		
+		
+		<link rel="stylesheet" href="cssestilos/estilos.css"/>
+		
+		
+		<title>GymControl</title> 
+		
+	</head>	
+
+	<body>
+		<div class="container-fluid">	
+			<div class="btn-toolbar justify-content-between">		
+				<a  style="color:rgb(0,0,255);font-size:60px;"><h1><u>GymControl</u></h1></a>
+				<div class="btn-group mr-1" role="group" aria-label="First group">
+					<a href="/" class="btn btn-primary"  role="button"><i class="fas fa-home"></i> Inicio</a>					
+					<a href="/areaDaRecepcionista" class="btn btn-primary active"  role="button"><i class="fas fa-female"></i> Recepcionista</a>
+					<a href="/areaDoGerente" class="btn btn-primary"  role="button"><i class="fas fa-user-tie"></i> Gerente</a>	
+					<a href="/" class="btn btn-secondary disabled"  role="button"><s><i class="fas fa-user-nurse"></i>Fisioterapeuta</s></a>
+					<a href="/" class="btn btn-secondary disabled"  role="button"><s><i class="fas fa-user"></i>Aluno</s></a>				
+				</div>
+			</div>	
+			
+			<br>
+			
+			<div class="btn-toolbar justify-content-between">		
+<!-- 				Container de Links da Barra de Navegação do HTML 	 -->
+				<a><i class="text-center fas fa-dumbbell fa-4x" style="color:rgb(0,0,255);"></i></a>
+				<div class="btn-group mr-1" role="group" aria-label="First group">
+<!-- 					<a href="/" class="btn btn-primary"  role="button"><i class="fas fa-user-cog"></i> Registrar Pagamento</a> -->
+					<a href="/listaDeAlunosMatriculados" class="btn btn-primary active"  role="button"><i class="fas fa-list"></i> Relatorio de Matriculas</a>	
+					<a href="/FormulariodeCadastroAluno" class="btn btn-primary"  role="button"><i class="fas fa-user-plus"></i> Cadastrar Aluno</a>	
+				</div>
+			</div>		
+			
+			<br>
+			
+			<table class="table table-striped">
+				<thead class="thead-blue">
+					<tr>
+						<th class="text-center">ID</th>
+						<th class="text-center">Nome</th>
+						<th class="text-center">Número Matrícula</th>
+						<th class="text-center">CPF</th>
+						<th class="text-center">RG</th>
+						<th class="text-center">Endereco</th>
+						<th class="text-center">Tipo Plano</th>
+						<th class="text-center">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr	th:each="aluno: ${listadeAlunos}">
+						<td class="text-center" th:text="${aluno.id}">ID</td>
+						<td class="text-center" th:text="${aluno.nome}">Nome</td>
+						<td class="text-center" th:text="${aluno.matricula}">Número Matrícula</td>
+						<td class="text-center" th:text="${aluno.cpf}">CPF</td>
+						<td class="text-center" th:text="${aluno.rg}">RG</td>
+						<td class="text-center" th:text="${aluno.endereco}">Endereco</td>
+						<td class="text-center" th:text="${aluno.tipoPlano}">Tipo Plano</td>
+<!-- 						<td><a class="text-center" th:href="@{/cadastrarPagamentoAluno(id=${aluno.id})}"><i class="fas fa-user-plus"></i> Registrar Pagamento</a></td>	 -->
+						
+					<td><a class="text-center" th:href="@{/cadastrarPagamentoAluno(id=${aluno.id})}"><i class="fas fa-hand-holding-usd"></i> Registrar Pagamento</a></td>	
+					</tr>
+				</tbody>
+			</table>	
+			
+			<br><br><br>
+			
+			<footer>
+	           	<p class="text-muted">TCC Rafael Santos 2020 - PUC MINAS Virtual</p>
+			</footer> 
+		</div>
+	</body> 
+</html> 

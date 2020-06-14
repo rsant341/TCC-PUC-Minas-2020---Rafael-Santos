@@ -1,0 +1,10 @@
+com\rafaelsantos\tcc\repositorios\RepositorioAlunos.class
+com\rafaelsantos\tcc\servicos\ServicoPagamentos.class
+com\rafaelsantos\tcc\controladores\AjusteData.class
+com\rafaelsantos\tcc\entidades\Aluno.class
+com\rafaelsantos\tcc\controladores\ControladorPagamentos.class
+com\rafaelsantos\tcc\repositorios\RepositorioPagamentos.class
+com\rafaelsantos\tcc\controladores\ControladorAlunos.class
+com\rafaelsantos\tcc\entidades\Pagamento.class
+com\rafaelsantos\tcc\TccRafaelSantosPucApplication.class
+com\rafaelsantos\tcc\servicos\ServicoAlunos.class
